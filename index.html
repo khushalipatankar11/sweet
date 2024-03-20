@@ -1,0 +1,52 @@
+
+<html>
+<head>
+	<title>Sweets App by Khushali</title>
+	<style>
+		*{ font-size:50px; }
+		h1{ background-color:black; color:white; width:50%; border-radius:40px; }
+		body{ background-color:light yellow; }
+                input[type=radio] { width:3%; height:0.5em; }
+	</style>
+</head>
+<body>
+<center>
+	<h1> Sweets You Like </h1>
+	<form onsubmit="show()">
+		<input type="text" placeholder="enter name" id="name" />
+		<br><br>
+		<input type="radio" name="s" value="gj" id="gj" />Gulab Jamun
+		<input type="radio" name="s" value="rg" id="rg" />Rosgulla
+		<input type="radio" name="s" value="ca" id="ca" checked=true/>Cake
+		<br><br>
+		<input type="submit" />
+	</form>
+	<h2 id="msg" />
+
+	<script>
+		function show()
+		{
+			event.preventDefault();
+			let name=document.getElementById("name");
+			let gj=document.getElementById("gj");
+			let rg=document.getElementById("rg");
+			let ca=document.getElementById("ca");
+			let msg=document.getElementById("msg");  
+                                                         
+			let sweet= "";
+			if(gj.checked)			sweet="Gulab Jamun";
+			else if(rg.checked)		sweet="Rosh Gulla";
+			else				sweet="Cake";
+
+			let ans="name = "+name.value+" sweet= "+sweet;
+			msg.innerHTML=ans;
+		}
+	</script>
+</center>
+</body>
+</html> 
+
+
+
+
+
